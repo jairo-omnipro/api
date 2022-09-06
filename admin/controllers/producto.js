@@ -29,8 +29,25 @@ const getProducts = (req, res) => {
     res.send(product);                               // se envia el producto a traves del formato JSON
 };
 
-
+/** postProducts
+ * esta funcion se encarga de cargar nuevos productos en el archivo productos.json. lee el body del mensaje que envia el cliente (JSON),
+ * y lo anade en productos.json.
+ * 
+ * HTTP POST http://localhost:3000/admin/producto
+ * @param {object} req : objeto Request de Express que maneja parametros del mensaje de llegada que envia el cliente
+ * @param {object} res : objeto Respone de Express que maneja parametros del mensaje de respuesta hacia el cliente
+ */
+ const postProducts = (req, res) => {
+    let newProduct = req.body;      // se obtiene el contenido (body) del mensaje que el usuario envia (JSON)
+    lib.addNewProductsJSON(newProduct);  // se adiciona el contenido a productos.json.
+    
+    // se envia un mensaje al cliente para notificar la adicion exitosa del producto
+     const mensaje = {
+        "Mensaje" : "Se ha insertado el producto exitosamente!!!"
+    }
+    res.send(mensaje);
+}
 
 
 // exportacion de funciones de controlador 'producto' para ser importadas en routers/producto.js
-module.exports = {getProducts, getProductsBySKU};
+module.exports = {getProducts, getProductsBySKU, postProducts};
