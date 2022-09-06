@@ -20,8 +20,8 @@ const controller = require('../controllers/producto');
  */
 
 router.get('', controller.getProducts);        // metodo get para http://localhost:3000/admin/producto, funcion callback de controlador: getProducts
-
-
-
+router.get(lib.getPathsBySKU(), controller.getProductsBySKU); // metodo get para familia de URIs http://localhost:3000/admin/producto/{sku}, funcion callback de controlador: getProducts
+router.post('', controller.postProducts);     // metodo post para http://localhost:3000/admin/producto, funcion callback de controlador: getProducts
+router.put(lib.getPathsBySKU(), controller.updateProductBySKU);  // metodo post para familia de URIs http://localhost:3000/admin/producto{sku}, funcion callback de controlador: getProducts
 
 module.exports = router;     // se exporta el enrutador para ser importado en el index.js
