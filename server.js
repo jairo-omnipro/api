@@ -11,12 +11,13 @@ const HOSTNAME = "127.0.0.1";       // IP donde se montara el servicio de la API
  * IMPORTACION DE ROUTERS INDICES
  * se importan las rutas de los index.js ubicados en cada carpeta de routes, tanto de la parte web como la mobile
  */
-
+ const webIndexRouter = require('./admin/routers/index');      // importacion de index router de la aplicacion web
 
 
 app.use(express.json());                         // se prepara el servidor para que pueda recibir datos JSON de los request que se hagan
                                                  // desde el cliente
-
+app.use('/admin', webIndexRouter);               // enrutamiento de las peticiones para 'http://localhost:3000/admin' hacia el router de indice 
+                                                 // para la aplicacion WEB
 
                                                  
 /**
