@@ -29,3 +29,6 @@ PROCEDIMIENTO:
         // AQUI SIGUEN OTROS ATRIBUTOS (IGNORE)
     }
 }
+
+- Por ultimo, ejecute el comando npm start para empezar a correr el servidor Node.js
+- En la terminal del Visual Studio se podra observar un mensaje que notifica que el servidor esta ON.
