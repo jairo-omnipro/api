@@ -19,6 +19,7 @@ const controller = require('../controllers/producto');
  * se enrutan las solicitudes necesarias (get, post, put, delete, etc) hacia las funciones callback de cada controlador
  */
 router.get('', controller.getProducts);
+router.get(lib.getPathsBySKU(), controller.getProductsBySKU);
 
 
 module.exports = router;    // se exporta el enrutador para ser importado en el index.js
