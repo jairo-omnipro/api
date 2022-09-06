@@ -32,3 +32,21 @@ PROCEDIMIENTO:
 
 - Por ultimo, ejecute el comando npm start para empezar a correr el servidor Node.js
 - En la terminal del Visual Studio se podra observar un mensaje que notifica que el servidor esta ON.
+
+RAMAS DE GITHUB
+
+- main: Rama principal donde reside la API-REST completa
+- comprar-mobile: Rama donde se maneja la solicitud POST hacia /comprar
+- data: Rama donde se maneja la subida de los archivos .json en el directorio admin/data
+- delete-product-web: Rama donde se maneja la solicitud DELETE hacia /admin/producto/{sku}
+- get-product-mobile: Rama donde se maneja la solicitud GET hacia /producto
+- get-product-sku-mobile: Rama donde se maneja la solicitud GET hacia /producto/{sku}
+- get-product-sku-web: Rama donde se maneja la solicitud GET hacia admin/producto/{sku}
+- get-product-web: Rama donde se maneja la solicitud GET hacia admin/producto
+- lib: Rama donde se maneja el script lib.js en directorio admin/lib
+- ordenes-web: Rama donde se maneja la solicitud POST hacia admin/ordenes
+- post-product-web: Rama donde se maneja la solicitud POST hacia admin/producto
+- put-product-web: Rama donde se maneja la solicitud PUT hacia admin/producto/{sku}
+- resume-mobile: Rama donde se maneja la solicitud POST hacia /resumen
+- web-index-routing: Rama donde se maneja el enrutamiento dinamico de la API WEB en index.js dentro de /admin/routers
+- mobile-index-routing: Rama donde se maneja el enrutamiento dinamico de la API MOBILE en index.js dentro de /mobile/routers
