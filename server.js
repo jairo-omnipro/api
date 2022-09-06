@@ -14,12 +14,17 @@ const HOSTNAME = "127.0.0.1";       // IP donde se montara el servicio de la API
  const webIndexRouter = require('./admin/routers/index');      // importacion de index router de la aplicacion web
 
 
+
+const mobileIndexRouter = require('./mobile/routers/index');  // importacion de index router de la aplicacion mobile  
+
+
 app.use(express.json());                         // se prepara el servidor para que pueda recibir datos JSON de los request que se hagan
                                                  // desde el cliente
 app.use('/admin', webIndexRouter);               // enrutamiento de las peticiones para 'http://localhost:3000/admin' hacia el router de indice 
                                                  // para la aplicacion WEB
 
-                                                 
+app.use('/', mobileIndexRouter);                 // enrutamiento de las peticiones para 'http://localhost:3000/' hacia el router de indice
+                                                 // para la aplicacion Mobile                                                 
 /**
  *  Se monta el servidor Node para que escuche las peticiones en el puerto PORT, y la IP HOSTNAME
  *  Se envia un mensaje por consola para indicar que el servidor esta corriendo
