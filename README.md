@@ -17,5 +17,3 @@ PROCEDIMIENTO:
 - Oprima la tecla enter repetidas veces hasta que llegue al mensaje "is this OK? (yes)"
 - Escriba en la terminal la palabra "yes" y oprima ENTER
 - Ejecute el comando npm install express --save
-- Oprima la tecla enter varias veces hasta llegar al mensaje donde se le requiere escribir YES
-- Escriba YES y pulse ENTER
