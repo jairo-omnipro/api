@@ -68,5 +68,23 @@ const getProducts = (req, res) => {
     res.send(mensaje);
 };
 
+/** deleteProductBySKU
+ * esta funcion se encarga de eliminar un producto de productos.json por SKU. 
+ * 
+ * HTTP DELETE http://localhost:3000/admin/producto/{sku}
+ * @param {object} req : objeto Request de Express que maneja parametros del mensaje de llegada que envia el cliente
+ * @param {object} res : objeto Respone de Express que maneja parametros del mensaje de respuesta hacia el cliente
+ */
+ const deleteProductBySKU = (req, res) => {
+    const SKU = lib.getSKUFromReq(req.originalUrl);  // se obtiene el SKU con la inspeccion del URL de la peticion del cliente
+    lib.deleteProductBySKU(SKU);       // se elimina el producto con el respectivo SKU del archivo productos.JSON
+    
+    // se envia un mensaje al cliente para notificar la adicion exitosa del producto    
+    const mensaje = {
+        "Mensaje" : "Se ha eliminado el producto exitosamente!!!"
+    }
+    res.send(mensaje);
+};
+
 // exportacion de funciones de controlador 'producto' para ser importadas en routers/producto.js
-module.exports = {getProducts, getProductsBySKU, postProducts, updateProductBySKU};
+module.exports = {getProducts, getProductsBySKU, postProducts, updateProductBySKU, deleteProductBySKU};
