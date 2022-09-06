@@ -48,6 +48,25 @@ const getProducts = (req, res) => {
     res.send(mensaje);
 }
 
+/** updateProductBySKU
+ * esta funcion se encarga de actualizar un producto de productos.json por SKU. sirve para solo actualizar uno o varios atributos del producto
+ * requerido.
+ * HTTP UPDATE http://localhost:3000/admin/producto/{sku}
+ * @param {object} req : objeto Request de Express que maneja parametros del mensaje de llegada que envia el cliente
+ * @param {object} res : objeto Respone de Express que maneja parametros del mensaje de respuesta hacia el cliente
+ */
+ const updateProductBySKU = (req, res) => {
+    const SKU = lib.getSKUFromReq(req.originalUrl); // se obtiene el SKU con la inspeccion del URL de la peticion del cliente
+    let newProduct = req.body;                  // se obtiene el contenido (body) del mensaje que el usuario envia (JSON)
+
+    lib.updateProductBySKU(SKU, newProduct);    // se actualiza el producto SKU con sus nuevos atributos
+
+    // se envia un mensaje al cliente para notificar la adicion exitosa del producto    
+    const mensaje = {
+        "Mensaje" : "Se ha actualizado el producto exitosamente!!!"
+    }
+    res.send(mensaje);
+};
 
 // exportacion de funciones de controlador 'producto' para ser importadas en routers/producto.js
-module.exports = {getProducts, getProductsBySKU, postProducts};
+module.exports = {getProducts, getProductsBySKU, postProducts, updateProductBySKU};
