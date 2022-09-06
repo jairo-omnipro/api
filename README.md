@@ -12,3 +12,4 @@ PROCEDIMIENTO:
 - Ubiquese en una carpeta dentro de su sistema
 - Abra una terminal de comandos (CMD)
 - Ejecute el comando git clone https://github.com/jairo-omnipro/api/network para adicionar el repositorio remoto a su sistema
+- ejecute el comando npm install express --save
