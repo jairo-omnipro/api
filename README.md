@@ -15,5 +15,6 @@ PROCEDIMIENTO:
 - Ubiquese con la terminal de comandos sobre el directorio creado por el anterior comando
 - En la misma terminal, ejecute el comando npm init
 - Oprima la tecla enter repetidas veces hasta que llegue al mensaje "is this OK? (yes)"
-- Escriba en la terminal la palabra "yes" y oprima ENTER
+- Escriba en la terminal la palabra "yes" y oprima ENTER. Espere a que cargue servicio de node.
+- Una vez que finalice, verifique que se haya creado un archivo con el nombre package.json. Si es asi, prosiga. En caso contrario, repita el procedimiento desde el inicio nuevamente.
 - Ejecute el comando npm install express --save
