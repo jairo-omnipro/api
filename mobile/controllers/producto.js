@@ -27,8 +27,19 @@ const getProducts = (req, res) => {
     res.send(productos);
 };
 
-
+/** getProductsBySKU
+ * esta funcion se encarga de obtener los productos de productos.json por SKU para posteriormente ser enviados hacia el cliente en formato JSON.
+ * 
+ * HTTP GET http://localhost:3000/producto/{sku}
+ * @param {object} req : objeto Request de Express que maneja parametros del mensaje de llegada que envia el cliente
+ * @param {object} res : objeto Respone de Express que maneja parametros del mensaje de respuesta hacia el cliente
+ */
+ const getProductsBySKU = (req, res) => {
+    const SKU = lib.getSKUFromReq(req.originalUrl);
+    const product = lib.getProductsMobileBySKU(SKU);
+    res.send(product);
+};
 
 
 // exportacion de funciones de controlador 'producto' para ser importadas en routers/producto.js
-module.exports = {getProducts};
+module.exports = {getProducts, getProductsBySKU};
